@@ -1,3 +1,4 @@
+# Solution of Day 2 Q1
 # Parsing the ranges
 with open("input.txt") as file:
     lines = file.read()
