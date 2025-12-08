@@ -1,4 +1,4 @@
-# Solution of Day 3 Q1
+# Solution of Day 3 Q2
 with open("input.txt") as file:
     lines = [line.rstrip() for line in file]
 jolt_max = 0
