@@ -1,4 +1,4 @@
-# Solution of Day 4 Q1
+# Solution of Day 4 Q2
 
 def print_matrix(matrix):
     for m in matrix:
