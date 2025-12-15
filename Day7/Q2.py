@@ -17,13 +17,13 @@ for line in lines:
 print(splitter_positions)
 state = {}
 def follow_rays(colIndex:int,rowIndex:int):
-    if (colIndex,rowIndex) in state:
+    if (colIndex,rowIndex) in state: # This is basically required since the input data row size is > 50
         return state[(colIndex,rowIndex)]
     splitterPositions = splitter_positions[rowIndex]
     print(f"Row: {rowIndex,colIndex}, Splitter: {splitterPositions}")
     if rowIndex < total_row-1:
         if colIndex in splitterPositions:
-             state[(colIndex,rowIndex)] = follow_rays(colIndex+1,rowIndex+1) + follow_rays(colIndex-1,rowIndex+1)
+             state[(colIndex,rowIndex)] = follow_rays(colIndex+1,rowIndex+1) + follow_rays(colIndex-1,rowIndex+1) # This relies on the input data structure that in the col=0 and col= end, we do not have splitters.
              return state[(colIndex,rowIndex)]
         else:
             state[(colIndex,rowIndex)] = follow_rays(colIndex,rowIndex+1)
